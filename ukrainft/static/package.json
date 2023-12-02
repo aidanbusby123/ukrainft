@@ -21,7 +21,7 @@
   "version": "1.0.0",
   "main": "main.js",
  "scripts": {
-  "build": "webpack --mode production --progress --config ../UKRAINFT/ukrainft/static/webpack.config.js",
+  "build": "webpack --mode production --progress --config ../static/webpack.config.js",
   "dev-build": "webpack --progress -d --config webpack.config.js",
   "watch": "webpack --progress -d --config webpack.config.js --watch"
 },
