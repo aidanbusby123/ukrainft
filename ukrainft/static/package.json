@@ -35,6 +35,5 @@
     "url": "https://github.com/aidanbusby123/ukrainft/issues"
   },
   "homepage": "https://github.com/aidanbusby123/ukrainft#readme",
-  "description": "",
-  "proxy": "http://localhost:5000"
+  "description": ""
 }
