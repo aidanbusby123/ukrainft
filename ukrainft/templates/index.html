@@ -19,6 +19,10 @@
     <nav>
         <a href="/">Home</a>
         <a href="/about">About</a>
+        {% block app_content %}
+        <div id="react-root"></div>
+        <script type ="application/x-javascript" src="{{url_for('static', filename='dist/bundle.js')}}"></script>
+        {% endblock %}
         <button class="connect-button">Connect</button>
     </nav>
 
