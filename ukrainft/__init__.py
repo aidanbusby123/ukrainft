@@ -1,6 +1,5 @@
 import os
 from flask import (Flask, render_template)
-import walletconnect
 
 def create_app(test_config=None):
     # Create, configure
@@ -34,7 +33,3 @@ def home():
 @app.route('/about')
 def about():
     return render_template('/about.html')
-
-@app.route('/connect')
-def connect():
-    wc = WalletConnect('127.0.0.1')
