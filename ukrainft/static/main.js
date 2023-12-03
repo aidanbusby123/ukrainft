@@ -24,7 +24,7 @@ createWeb3Modal({ wagmiConfig, projectId, chains })
 export default function App() {
   return (
     <WagmiConfig config={wagmiConfig}>
-      
+      <ConnectButton />
     </WagmiConfig>
   )
 }
