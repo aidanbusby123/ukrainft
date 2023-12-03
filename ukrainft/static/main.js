@@ -21,13 +21,14 @@ const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata })
 // 3. Create modal
 createWeb3Modal({ wagmiConfig, projectId, chains })
 
-export default function App() {
+const App = () => {
   return (
     <WagmiConfig config={wagmiConfig}>
       <ConnectButton />
     </WagmiConfig>
   )
 }
+export default App;
 
 export function ConnectButton() {
   // 4. Use modal hook
