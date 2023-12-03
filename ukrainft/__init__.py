@@ -25,7 +25,7 @@ def create_app(test_config=None):
     
     return app
 
-app = create_app(host=sys.argv[1])
+app = create_app(host=str(sys.argv[1]))
 
 @app.route('/')
 def home():
