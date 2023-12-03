@@ -19,14 +19,15 @@
     <nav>
         <a href="/">Home</a>
         <a href="/about">About</a>
-        {% block app_content %}
-        <div id="react-root"></div>
-        <script type ="application/x-javascript" src="{{url_for('static', filename='dist/bundle.js')}}"></script>
-        {% endblock %}
+        
         <button class="connect-button">Connect</button>
     </nav>
 
     <main>
+        {% block app_content %}
+        <div id="react-root"></div>
+        <script src="{{url_for('static', filename='dist/bundle.js')}}"></script>
+        {% endblock %}
         <h2>Welcome to UKRAINFT</h2>
         <p>This is the home page content.</p>
     </main>

@@ -35,6 +35,7 @@ export function ConnectButton() {
 
   return (
     <>
+    <h1>Connect</h1>
       <button onClick={() => open()}>Open Connect Modal</button>;
       <button onClick={() => open({ view: 'Networks' })}>Open Network Modal</button>;
     </>
