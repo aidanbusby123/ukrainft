@@ -1,6 +1,7 @@
 import { createWeb3Modal, defaultWagmiConfig } from '@web3modal/wagmi/react'
 
 import { WagmiConfig } from 'wagmi'
+import { useAccount } from 'wagmi'
 import { arbitrum, mainnet } from 'viem/chains'
 
 // 1. Get projectId at https://cloud.walletconnect.com
@@ -20,14 +21,31 @@ const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata })
 // 3. Create modal
 createWeb3Modal({ wagmiConfig, projectId, chains })
 
-/*export default function App() {
+export default function App() {
   return (
     <WagmiConfig config={wagmiConfig}>
-      // Rest of your app...
+
     </WagmiConfig>
   )
-}*/
+}
 
 export default function ConnectButton() {
-  return <w3m-button />
+  // 4. Use modal hook
+  const { open } = useWeb3Modal();
+
+  return (
+    <>
+      <button onClick={() => open()}>Open Connect Modal</button>;
+      <button onClick={() => open({ view: 'Networks' })}>Open Network Modal</button>;
+    </>
+  )
+}
+
+function App(){
+  ConnectButton();
+   const {address, isConnecting, isDisconnected} = useAccount();
+   if (isConnecting) return <div>Connecting…</div>;
+   if (isDisconnected) return <div>Disconnected</div>;
+   return <div>{address}</div>;
+   
 }
