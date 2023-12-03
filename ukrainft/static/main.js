@@ -24,7 +24,7 @@ createWeb3Modal({ wagmiConfig, projectId, chains })
 export default function App() {
   return (
     <WagmiConfig config={wagmiConfig}>
-
+      
     </WagmiConfig>
   )
 }
@@ -39,13 +39,4 @@ export function ConnectButton() {
       <button onClick={() => open({ view: 'Networks' })}>Open Network Modal</button>;
     </>
   )
-}
-
-function App(){
-  ConnectButton();
-   const {address, isConnecting, isDisconnected} = useAccount();
-   if (isConnecting) return <div>Connecting…</div>;
-   if (isDisconnected) return <div>Disconnected</div>;
-   return <div>{address}</div>;
-   
 }
